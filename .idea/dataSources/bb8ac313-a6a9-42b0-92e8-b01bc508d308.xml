@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="SSM_db@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.2">
+    <root id="1"/>
+    <database id="2" parent="1" name="SSM_db">
+      <ObjectId>32866</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-05-31.17:15:54.711</IntrospectionTimestamp>
+      <IntrospectionStateNumber>815</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11320</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11321</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>11585</ObjectId>
+    </schema>
+    <schema id="9" parent="2" name="ssm_schema">
+      <ObjectId>32867</ObjectId>
+    </schema>
+    <sequence id="10" parent="3" name="book_id_seq">
+      <ObjectId>32884</ObjectId>
+      <StateNumber>809</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="11" parent="3" name="book">
+      <ObjectId>32886</ObjectId>
+      <StateNumber>809</StateNumber>
+    </table>
+    <column id="12" parent="11" name="id">
+      <Position>1</Position>
+      <Comment>编号</Comment>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>809</StateNumber>
+      <SequenceName>book_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;book_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="13" parent="11" name="title">
+      <Position>2</Position>
+      <Comment>书籍名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>809</StateNumber>
+    </column>
+    <column id="14" parent="11" name="typename">
+      <Position>3</Position>
+      <Comment>类型</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>809</StateNumber>
+    </column>
+    <column id="15" parent="11" name="price">
+      <Position>4</Position>
+      <Comment>价格</Comment>
+      <DataType>numeric(10,2)|0</DataType>
+      <StateNumber>809</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="16" parent="11" name="state">
+      <Position>5</Position>
+      <Comment>状态</Comment>
+      <DataType>varchar(10)|0</DataType>
+      <StateNumber>809</StateNumber>
+      <DefaultExpression>&apos;可借&apos;::character varying</DefaultExpression>
+    </column>
+    <index id="17" parent="11" name="book_pkey">
+      <ObjectId>32895</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="18" parent="11" name="book_title_uindex">
+      <ObjectId>32897</ObjectId>
+      <ColNames>title</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="19" parent="11" name="book_pkey">
+      <ObjectId>32896</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>book_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
